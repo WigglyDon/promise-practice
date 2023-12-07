@@ -34,3 +34,20 @@ function getServerStatus() {
 // returning the value it was supposed to return, returns a *Promise* object.
 // The promise object eventually resolves and gives the user the answer.
 
+function sumAsync(x, y) {
+    const p = new Promise((resolve, reject) => {
+        resolve(x + y);
+    });
+
+    // this returns a PROMISE... not a value.
+    return p;
+}
+
+// usage
+sumAsync(5, 7).then((result) => {
+    console.log(`The result of the addition is: ${result}`);
+})
+
+// so the .then() is here with a callback because sumAsync() does not
+//      actually return a value itself. The promise object it returns
+//      has the returned value.
