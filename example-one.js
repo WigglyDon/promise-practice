@@ -51,24 +51,3 @@ sumAsync(5, 7).then((result) => {
 // so the .then() is here with a callback because sumAsync() does not
 //      actually return a value itself. The promise object it returns
 //      has the returned value.
-
-
-// The following is a modified example which resolves after 500ms
-
-function sumAsync(x, y) {
-    console.log('1. sumAsync is exercuted');
-    const p = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log('4. Resolving sumAsyncs Promise with the result after 500ms');
-            resolve(x + y);
-        }, 500)
-        console.log('2. sumAsync Promise is initialized');
-    });
-    console.log('3. sumAsync has returned the Promise');
-    return p;
-}
-
-//usage
-sumAsync(5, 32).then((result) => {
-    console.log*'5. prints the result: ', result
-});
