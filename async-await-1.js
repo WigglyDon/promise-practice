@@ -32,3 +32,17 @@ async function sumAsync(x, y) {
 sumAsync(4, 6).then((result) => {
     console.log(`the result is seemingly ${result} :)`);
 });
+
+
+// Write an async function which waits 500 milliseconds and then returns the uppercase of a
+// given string. Use the sleep function provided.
+
+async function newTest(string) {
+    await sleep(500);
+
+    return string.toUpperCase();
+}
+
+newTest("bing bong").then((result) => {
+    console.log(`new bing bongs =>  ${result}`);
+})
