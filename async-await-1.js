@@ -20,3 +20,18 @@
 // Going to also try adding *sleep()* here instead of *setTimeout()*.
 // sleep() still uses setTimeout() to work.
 
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function sumAsync(x, y) {
+    return new Promise((resolve, reject) => {
+        sleep(500).then(() => {
+            resolve(x + y);
+        });
+    });
+}
+
+sumAsync(6, 6).then((result) => {
+    console.log(`the result is seemingly ${result} :)`);
+});
