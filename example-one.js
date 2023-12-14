@@ -44,7 +44,7 @@ function sumAsync(x, y) {
 }
 
 // usage
-sumAsync(5, 7).then((result) => {
+sumAsync(24, 7).then((result) => {
     console.log(`The result of the addition is: ${result}`);
 })
 

@@ -7,7 +7,7 @@ const sumAsync = (x, y) => {
         setTimeout(() => {
             console.log(`4. resolving promise after delay`);
             resolve(x + y);
-        }, 500);
+        }, 3000);
         console.log(`2. sumAsync promise has been initialized~`)
     });
     console.log(`3. symAsync has returned the Promise`);
