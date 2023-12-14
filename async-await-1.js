@@ -24,14 +24,11 @@ function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function sumAsync(x, y) {
-    return new Promise((resolve, reject) => {
-        sleep(500).then(() => {
-            resolve(x + y);
-        });
-    });
+async function sumAsync(x, y) {
+    await sleep(500);
+    return x + y;
 }
 
-sumAsync(6, 6).then((result) => {
+sumAsync(4, 6).then((result) => {
     console.log(`the result is seemingly ${result} :)`);
 });
